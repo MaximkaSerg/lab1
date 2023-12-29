@@ -1,7 +1,5 @@
 import random
 import queue
-import matplotlib.pyplot as plt
-
 
 def titulniyList():
     print("\n Министерство науки и высшего образования Российской Федерации")
@@ -112,16 +110,6 @@ def shortest_path(matrix):
     return -1, []  # No path found
 
 
-def plot_path(matrix, path):
-    rows, cols = len(matrix), len(matrix[0])
-    path_matrix = [[0] * cols for _ in range(rows)]
-
-    for node in path:
-        path_matrix[node[0]][node[1]] = 1
-
-    plt.imshow(path_matrix, cmap='Blues', interpolation='nearest')
-    plt.title('Кратчайший путь')
-    plt.show()
 
 
 if __name__ == "__main__":
@@ -165,7 +153,6 @@ if __name__ == "__main__":
             if result != -1:
                 print("\nДлина кратчайшего пути:", result)
                 print("\nКратчайший путь:", path)
-                plot_path(maze, path)
             else:
                 print("\nПуть не найден.")
 
